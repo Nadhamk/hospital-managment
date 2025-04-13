@@ -1,0 +1,13 @@
+li:hover {
+    background-color: rgb(115, 192, 220);
+    border-radius: 20px;
+}
+
+ img{
+    height: 400px;
+    width: 400px;
+}
+
+.c_img{
+    border-radius: 20px;
+}

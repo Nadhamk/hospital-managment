@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "navbar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> {% block title %}  {% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% comment %} <link rel="stylesheet" href="{% static "\css\style.css" %}"> {% endcomment %}
+        
+    </head>
+    <body>
+        {% block content%}
+        <div class="container" style=" display:grid;
+                grid-template-columns:1fr 1fr;
+                align-items:center;
+                gap:20px;">
+        <img class="c_img" src="{% static "\images\c1.jpg" %}"
+        style=" border-radius: 20px;
+               margin:50px;
+        ">
+        <form action="" method="POST" style="display:flex;
+        flex-direction:column; ">
+            {{form|crispy}}
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            <button style=" background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;"  > Submit</button>
+             </form>
+            
+        </div>
+         {% endblock %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
